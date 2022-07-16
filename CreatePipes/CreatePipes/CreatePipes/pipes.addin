@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Name>MyCommand</Name>
+		<Assembly>CreatePipes.dll</Assembly>
+		<AddInId>1B0C5389-B1D9-4902-95B3-CBFDDDD44863</AddInId>
+		<FullClassName>CreatePipes.CreatePipes</FullClassName>
+		<Text>pipes </Text>
+		<VendorId>Abdullah-Khaled</VendorId>
+		<VendorDescription>abdul.khaled.sultan@gmail.com</VendorDescription>
+	</AddIn>
+</RevitAddIns>

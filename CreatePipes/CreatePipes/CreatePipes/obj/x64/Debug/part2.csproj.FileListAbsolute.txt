@@ -1,0 +1,6 @@
+E:\ITI\DataStructure\line pipe\part2\part2\bin\x64\Debug\part2.dll
+E:\ITI\DataStructure\line pipe\part2\part2\bin\x64\Debug\part2.pdb
+E:\ITI\DataStructure\line pipe\part2\part2\obj\x64\Debug\part2.csproj.AssemblyReference.cache
+E:\ITI\DataStructure\line pipe\part2\part2\obj\x64\Debug\part2.csproj.CoreCompileInputs.cache
+E:\ITI\DataStructure\line pipe\part2\part2\obj\x64\Debug\part2.dll
+E:\ITI\DataStructure\line pipe\part2\part2\obj\x64\Debug\part2.pdb
