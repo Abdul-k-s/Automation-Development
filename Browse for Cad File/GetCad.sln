@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCad", "Abdullah_Khaled\GetCad.csproj", "{555B7704-85C8-4D4E-89E3-4EB9585350D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Debug|x64.ActiveCfg = Debug|x64
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Debug|x64.Build.0 = Debug|x64
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Release|x64.ActiveCfg = Release|x64
+		{555B7704-85C8-4D4E-89E3-4EB9585350D3}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7CB5EB8-8DD5-4D22-AC8D-99B05045A58A}
+	EndGlobalSection
+EndGlobal

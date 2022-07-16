@@ -1,0 +1,6 @@
+E:\ITI\DataStructure\Abdullah_Khaled\Abdullah_Khaled\bin\x64\Debug\Abdullah_Khaled.dll
+E:\ITI\DataStructure\Abdullah_Khaled\Abdullah_Khaled\bin\x64\Debug\Abdullah_Khaled.pdb
+E:\ITI\DataStructure\Abdullah_Khaled\Abdullah_Khaled\obj\x64\Debug\GetCad.csproj.AssemblyReference.cache
+E:\ITI\DataStructure\Abdullah_Khaled\Abdullah_Khaled\obj\x64\Debug\GetCad.csproj.CoreCompileInputs.cache
+E:\ITI\DataStructure\Abdullah_Khaled\Abdullah_Khaled\obj\x64\Debug\Abdullah_Khaled.dll
+E:\ITI\DataStructure\Abdullah_Khaled\Abdullah_Khaled\obj\x64\Debug\Abdullah_Khaled.pdb

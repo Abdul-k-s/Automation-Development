@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Name>MyCommand</Name>
+		<Assembly>GetCad.dll</Assembly>
+		<AddInId>0720BCD1-9DC7-4CCC-9D88-30D9C8C3F64B</AddInId>
+		<FullClassName>GetCad.Browse</FullClassName>
+		<Text>export </Text>
+		<VendorId>Abdullah-Khaled</VendorId>
+		<VendorDescription>abdul.khaled.sultan@gmail.com www.autodesk.com</VendorDescription>
+	</AddIn>
+</RevitAddIns>

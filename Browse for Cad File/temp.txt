@@ -1,0 +1,132 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
+using Autodesk.Revit.Attributes;
+using Autodesk.Revit.Creation;
+using Autodesk.Revit.UI.Selection;
+using System.Windows.Forms;
+using Autodesk.Revit.DB.Mechanical;
+using Autodesk.Revit.DB.Plumbing;
+
+namespace Abdullah_Khaled
+{
+    [Transaction(TransactionMode.Manual)]
+
+    public class Class1 : IExternalCommand
+    {
+        private Autodesk.Revit.DB.Document RevitDoc;
+
+        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        {
+            UIDocument uidoc = commandData.Application.ActiveUIDocument;
+            RevitDoc = uidoc.Document;
+            DWGImportOptions opt = new DWGImportOptions();
+            opt.Placement = ImportPlacement.Origin;
+            opt.AutoCorrectAlmostVHLines = true;
+            opt.ThisViewOnly = false; // not this view only
+            opt.Unit = ImportUnit.Default;
+
+            ElementId linkId = ElementId.InvalidElementId;
+            using (Transaction tran = new Transaction(RevitDoc, "Quick Link"))
+            {
+                tran.Start();
+                #region MyRegion
+                OpenFileDialog choofdlog = new OpenFileDialog();
+                choofdlog.Filter = "All Files (*.*)|*.*";
+                choofdlog.FilterIndex = 1;
+                choofdlog.Multiselect = true;
+
+                if (choofdlog.ShowDialog() == DialogResult.OK)
+                {
+                    string sFileName = choofdlog.FileName;
+                    //string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true
+                    RevitDoc.Import(sFileName, opt, RevitDoc.ActiveView, out linkId);
+
+                    ImportInstance cadInst = RevitDoc.GetElement(linkId) as ImportInstance;
+                    CADLinkType cadLinkType = RevitDoc.GetElement(cadInst.GetTypeId()) as CADLinkType;
+                    //RevitDoc.GetElement(cadLinkType.)
+
+
+                }
+
+                #endregion
+
+                #region MyRegion
+                MEPSystemType mepSystemType = new FilteredElementCollector(RevitDoc)
+                .OfClass(typeof(MEPSystemType))
+                .Cast<MEPSystemType>()
+                .FirstOrDefault(sysType => sysType.SystemClassification == MEPSystemClassification.DomesticColdWater);
+                ///
+                PipeType pipeType = new FilteredElementCollector(RevitDoc)
+                .OfClass(typeof(PipeType))
+                .Cast<PipeType>()
+                .FirstOrDefault();
+                Level level = new FilteredElementCollector(RevitDoc)
+                .OfClass(typeof(Level))
+                .Cast<Level>()
+                .FirstOrDefault(e => e.Name == "Level 1");
+
+
+                FilteredElementCollector lines = new FilteredElementCollector(RevitDoc)
+                .OfClass(typeof(CurveElement)).OfCategory(BuiltInCategory.OST_Lines);
+
+                if (lines.Count() != 0)
+                {
+                    foreach (DetailLine x in lines)
+                    {
+                        string length = x.GeometryCurve.ApproximateLength.ToString();
+                        string start = x.GeometryCurve.GetEndParameter(0).ToString();
+                        string stop = x.GeometryCurve.GetEndParameter(1).ToString();
+                        MessageBox.Show("line Id: " + x.Id + ". line start: " + start + ". line stop: " + stop);
+
+                        MessageBox.Show("Titleblock Line length: " + x.GeometryCurve.Length.ToString());
+
+                    }
+                }
+
+
+
+
+
+
+                Pipe pipe = Pipe.Create(RevitDoc,mepSystemType.Id,pipeType.Id,level.Id,new XYZ(0,0,0),new XYZ(10,0,10));
+                #endregion
+
+                tran.Commit();
+            }
+            //
+            // get the link instance and the CADLinkType
+            //cadLinkType.LoadFrom(path2);
+
+
+            return Result.Succeeded;
+        }
+    }
+}
+
+
+//tran.Start();
+//#region MyRegion
+//OpenFileDialog choofdlog = new OpenFileDialog();
+//choofdlog.Filter = "All Files (*.*)|*.*";
+//choofdlog.FilterIndex = 1;
+//choofdlog.Multiselect = true;
+
+//if (choofdlog.ShowDialog() == DialogResult.OK)
+//{
+//    string sFileName = choofdlog.FileName;
+//    string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true
+
+//}
+
+
+
+//#endregion
+//ImportInstance cadInst = RevitDoc.GetElement(linkId) as ImportInstance;
+//CADLinkType cadLinkType = RevitDoc.GetElement(cadInst.GetTypeId()) as CADLinkType;
+//string path = @"E:\ITI\Drawing1.dwg";
+//tran.Commit();
